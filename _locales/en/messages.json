@@ -1,0 +1,11 @@
+{
+  "manifest_name": {
+    "message": "DoNotDiscard - Disable tab discard/suspend"
+  },
+  "manifest_description": {
+    "message": "Stops Chrome from suspending specific tabs, and reloading them when you switch to them. Open chrome://discards for details."
+  },
+  "manifest_title": {
+    "message": "Automatic tab discarding currently disabled\nDisable/uninstall this extension to enable it"
+  }
+}
