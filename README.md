@@ -1,4 +1,4 @@
-![DoNotSuspend logo](https://github.com/MartinWie/DoNotSuspend/blob/master/DoNotSuspend_logo.png)
+![DoNotSuspend logo](https://github.com/MartinWie/DoNotSuspend/blob/main/DoNotSuspend_logo.png)
 
 # Install
 [Chrome store](https://chrome.google.com/webstore/detail/piohlfbmepkepkoiacedlalbmbkjfphc)
