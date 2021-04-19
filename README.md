@@ -21,3 +21,4 @@ The column "AutoDiscardable" should off for all tabs.
     - Wrap keywords into text fields(size visual limitation)
 - Add sync feature off chrome chrome.storage.sync.set and chrome.storage.sync.get for keywords
 - Add vote for extension option
+- Add functionality to discard / unload with special keyword
