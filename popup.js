@@ -1,4 +1,5 @@
-let background = chrome.extension.getBackgroundPage();
+let background = chrome.extension.getBackgroundPage(); 
+// this here is the problem, find a solution to get infromation form the the backround worker
 
 document.addEventListener('DOMContentLoaded', () => {
     const filterList = document.getElementById('filterList');
