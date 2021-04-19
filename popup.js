@@ -7,7 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
         location.reload();
     }
 
-    const filtersHTML = background.doNotSuspends.map( filter => {
+    const doNotSuspends = background.loadDoNotSuspendsLocal()
+
+    console.log(doNotSuspends)
+
+    const filtersHTML = doNotSuspends.map( filter => {
         return ` <li class="filter-item">
             <button class="btn" value="${filter}">remove</button>
             ${filter}
