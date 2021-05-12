@@ -1,6 +1,5 @@
 chrome.runtime.onInstalled.addListener(function(details) {
   doNotSuspends = ["troy", "music", "ikaros"]
-  //console.log("Installing with this: " + doNotSuspends)
   saveDoNotSuspendsLocal(doNotSuspends)
   chrome.tabs.query({}, (tabs) => {
     tabs.forEach((tab) => {
@@ -30,8 +29,12 @@ chrome.runtime.onMessage.addListener(
     }
       
     if (request.action == "remove"){
-      console.log(`Remove! Nice!!! Value: ${request.value}`)
       removeFromDoNotSuspendList(request.value);
+      return true
+    }
+
+    if (request.action == "add"){
+      addToDoNotSuspendList(request.value);
       return true
     }
     
@@ -48,16 +51,6 @@ function discardTab(tab){
       enableAutoDiscardForTab(tab.id)
     }
   });
-}
-
-
-
-function discardManaging(tab){
-  if(shouldDiscardBeDisabled(tab)){
-    disableAutoDiscardForTab(tab.id);
-  }else{
-    enableAutoDiscardForTab(tab.id)
-  }
 }
 
 function isTabUrlInList(list,tab){
@@ -86,42 +79,20 @@ function updateAllTabs() {
   chrome.tabs.query({}, (tabs) => {
     tabs.forEach(function(tab) {
       if(tab.url.indexOf("http") != -1){
-        switch(shouldDiscardBeDisabled(tab)){
-          case true:
-            disableAutoDiscardForTab(tab.id)
-            break;
-  
-          case false:
-            enableAutoDiscardForTab(tab.id)
-            break;
-        }
+        discardTab(tab)
       }
     });
   });
 }
 
 function saveDoNotSuspendsLocal(doNotSuspends) {
-  chrome.storage.local.set({'doNotSuspends': doNotSuspends}, () => {
-    //chrome.storage.local.get(['doNotSuspends'], (result) => {})
-  });
-}
-
-function saveDoNotSuspendsSync(doNotSuspends) {
-  chrome.storage.sync.set({'doNotSuspends': doNotSuspends}, () => {});
+  chrome.storage.local.set({'doNotSuspends': doNotSuspends}, () => {});
 }
 
  function loadDoNotSuspendsLocal(callback){ 
   chrome.storage.local.get(['doNotSuspends'], (result) => { 
     callback(result.doNotSuspends)
   });
-}
-
-function loadDoNotSuspendsSync(){
-  let doNotSuspendsLoaded
-  chrome.storage.sync.get(['doNotSuspends'], (result) => {
-    doNotSuspendsLoaded = result.doNotSuspends
-  });
-  return doNotSuspendsLoaded
 }
 
  function addToDoNotSuspendList(entry) {
@@ -141,6 +112,5 @@ function loadDoNotSuspendsSync(){
     })
     updateAllTabs()
     saveDoNotSuspendsLocal(doNotSuspendsLoaded)
-    
   });
 }

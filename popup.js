@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
+    loadUI()
+});
 
-    //var doNotSuspends = ["troy", "music", "ikaros"]
-    
+const loadUI = () => {
     chrome.runtime.sendMessage({action:"getList", value: "doNotSuspends"},(response) => {
         doNotSuspends = response
-        console.log(`Answereto getList : ${doNotSuspends}`)
-
+        
         const filtersHTML = doNotSuspends.map( filter => {
             return ` <li class="filter-item">
                 <button class="btn" value="${filter}">remove</button>
@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
             </li>
             `
         }).join('');
+
+        const filterList = document.getElementById('filterList');
         
         filterList.innerHTML = filtersHTML;
     
@@ -22,21 +24,23 @@ document.addEventListener('DOMContentLoaded', () => {
             entry.addEventListener('click',remove)
         });
     
-    
         const filterButton = document.getElementById('filterButton');
         const inputFire = () => {
-            addToDoNotSuspendList(document.getElementById('filterInput').value);
-            location.reload();
+            add(document.getElementById('filterInput').value);
         }
         filterButton.addEventListener('click',inputFire)
         
       });
+}
 
-    const filterList = document.getElementById('filterList');
-    const remove = (elem) => {
-        chrome.runtime.sendMessage({action:"remove", value: elem.target.value},() => {
-            console.log("Trigered remove")
-            location.reload();
-          });
-    }
-});
+const remove = (elem) => {
+    chrome.runtime.sendMessage({action:"remove", value: elem.target.value},() => {});
+    loadUI()
+    location.reload();
+}
+
+const add = (elem) => {
+    chrome.runtime.sendMessage({action:"add", value: elem},() => {});
+    loadUI();
+    location.reload();
+}
