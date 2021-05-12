@@ -14,8 +14,6 @@ The column "AutoDiscardable" should off for all tabs.
 
 
 ## TODOs: 
-- rewrite extension in V3
-- address bug with no entries
 - Add good styling (popup.css)
     - Create better boxing around entries
     - Move the remove button to the right side
