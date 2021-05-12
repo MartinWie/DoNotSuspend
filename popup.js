@@ -28,9 +28,16 @@ const loadUI = () => {
         const inputFire = () => {
             add(document.getElementById('filterInput').value);
         }
-        filterButton.addEventListener('click',inputFire)
-        
-      });
+        filterButton.addEventListener('click',inputFire);
+
+        filterInput.addEventListener("keydown",event => {
+            if (event.isComposing || event.keyCode === 13) {
+                inputFire()
+                return
+            }
+          }
+        );
+    });
 }
 
 const remove = (elem) => {
