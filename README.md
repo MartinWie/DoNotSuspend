@@ -15,9 +15,8 @@ The column "AutoDiscardable" should off for all tabs.
 
 ## TODOs: 
 - Add good styling (popup.css)
-    - Create better boxing around entries
-    - Move the remove button to the right side
-    - Wrap keywords into text fields(size visual limitation)
+    - make styling more stable for very long keywords
+    - add styling for keywords 
 - Add sync feature off chrome chrome.storage.sync.set and chrome.storage.sync.get for keywords
 - Add vote for extension option
 - Add functionality to discard / unload with special keyword

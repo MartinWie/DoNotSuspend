@@ -8,8 +8,10 @@ const loadUI = () => {
         
         const filtersHTML = doNotSuspends.map( filter => {
             return ` <li class="filter-item">
-                <button class="btn" value="${filter}">remove</button>
-                ${filter}
+                <div class="filter-item-keyword">
+                    ${filter}
+                </div>
+                    <button class="btn" value="${filter}">remove</button>
             </li>
             `
         }).join('');

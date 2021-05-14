@@ -33,10 +33,27 @@
     flex-wrap: nowrap;
 }
 
+#filterList{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .filter-item {
+    display: flex;
     list-style-type: none;
     justify-content: space-between;
+    flex-direction: row;
     align-items: center;
     align-content: center;
 }
 
+.filter-item-keyword {
+    align-items: flex-end;
+    width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+   -webkit-line-clamp: 1; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}
