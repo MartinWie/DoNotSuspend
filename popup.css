@@ -50,10 +50,21 @@
 
 .filter-item-keyword {
     align-items: flex-end;
-    width: 50%;
+    width: 70%;
+    max-width: 250px;
+    min-width: 150px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
    -webkit-line-clamp: 1; /* number of lines to show */
    -webkit-box-orient: vertical;
+}
+
+#filterButton{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#filterInput{
+    width: 100%;
 }

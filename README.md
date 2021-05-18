@@ -13,10 +13,7 @@ Open "chrome://discards/"
 The column "AutoDiscardable" should off for all tabs.
 
 
-## TODOs: 
-- Add good styling (popup.css)
-    - make styling more stable for very long keywords
-    - add styling for keywords 
+## TODOs:  
 - Add sync feature off chrome chrome.storage.sync.set and chrome.storage.sync.get for keywords
 - Add vote for extension option
 - Add functionality to discard / unload with special keyword

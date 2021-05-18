@@ -9,7 +9,7 @@ const loadUI = () => {
         const filtersHTML = doNotSuspends.map( filter => {
             return ` <li class="filter-item">
                 <div class="filter-item-keyword">
-                    ${filter}
+                    <b>${filter}</b>
                 </div>
                     <button class="btn" value="${filter}">remove</button>
             </li>
