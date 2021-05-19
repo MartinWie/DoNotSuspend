@@ -6,6 +6,7 @@
 
 # Disable automatic tab discarding for specific domains
 Stops Chrome from suspending tabs, and reloading them when you switch to them for specific tabs.
+![DoNotSuspend usage](https://github.com/MartinWie/DoNotSuspend/blob/main/images/chromestore3.png)
 
 
 ## See if this is working
