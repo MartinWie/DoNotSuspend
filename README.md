@@ -13,6 +13,9 @@ Stops Chrome from suspending tabs, and reloading them when you switch to them fo
 Open "chrome://discards/" 
 The column "AutoDiscardable" should off for all tabs.
 
+## Disclaimer
+If the browser forces tab hibernation caused by low system resources no software can stop this!
+This extension only controls which tabs are favored to stay active as long as the system is capable of this.
 
 ## TODOs:  
 - Add sync feature off chrome chrome.storage.sync.set and chrome.storage.sync.get for keywords
