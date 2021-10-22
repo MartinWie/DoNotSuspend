@@ -1,11 +1,13 @@
 chrome.runtime.onInstalled.addListener(function(details) {
-  doNotSuspends = ["troy", "music", "ikaros"]
-  saveDoNotSuspendsLocal(doNotSuspends)
-  chrome.tabs.query({}, (tabs) => {
-    tabs.forEach((tab) => {
-      discardTab(tab)
+  if (details.reason === "install") {
+    doNotSuspends = ["troy", "music", "ikaros"]
+    saveDoNotSuspendsLocal(doNotSuspends)
+    chrome.tabs.query({}, (tabs) => {
+      tabs.forEach((tab) => {
+        discardTab(tab)
+      });
     });
-  });
+  }
 });
 
 chrome.tabs.onCreated.addListener((tab) => {
