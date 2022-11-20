@@ -80,7 +80,7 @@ function enableAutoDiscardForTab(tabId){
 function updateAllTabs() {
   chrome.tabs.query({}, (tabs) => {
     tabs.forEach(function(tab) {
-      if(tab.url.indexOf("http") != -1){
+      if((tab.url.indexOf("http") != -1) || tab.url.indexOf("file:") != -1) {
         discardTab(tab)
       }
     });
