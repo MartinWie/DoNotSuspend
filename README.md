@@ -19,6 +19,9 @@ If the browser forces tab hibernation caused by low system resources no software
 This extension only controls which tabs are favored to stay active as long as the system is capable of this.
 
 ## TODOs:  
+- Fix styling
+  - Get consistent button and text styling
+  - Make keyword cards more visible
 - Add sync feature off chrome chrome.storage.sync.set and chrome.storage.sync.get for keywords
 - Add vote for extension option
 - Add functionality to discard / unload with special keyword

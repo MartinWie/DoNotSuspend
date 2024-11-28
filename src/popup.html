@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage URL-Keywords</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body class="bg-gray-200 flex flex-col items-center justify-center min-h-screen p-6 min-w-[420px]">
+<h3 class="text-3xl font-bold text-gray-900 mb-8">Manage URL-Keywords</h3>
+<div class="flex flex-col items-center space-y-4 mb-8 w-full max-w-md">
+    <input type="text" id="filterInput" placeholder="Enter keyword"
+           class="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full">
+    <button id="filterButton" class="bg-indigo-600 text-white w-full py-3 rounded-lg hover:bg-indigo-700 transition">
+        Add
+    </button>
+</div>
+<div class="w-full max-w-md bg-white p-4 rounded-lg shadow-lg">
+    <ol id="filterList" class="list-decimal list-inside text-gray-700 space-y-1"></ol>
+</div>
+<script src="popup.js"></script>
+</body>
+</html>
